@@ -1,1 +1,33 @@
 {{outlet}}
+
+
+<div class="user-show">
+  <aside>
+    <h5>
+      {{firstName}}
+      {{lastName}}
+    </h5>
+    <h6>
+      {{email}}
+    </h6>
+  </aside>
+  <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo-show">
+  </div>
+</div>
+
+<main id="scroll">
+
+  {{#each rant in rants class="rant-box"}}
+    <div class="rant">
+      <header class="rant-header">
+        <h3 class="rant-title">{{rant.title}}</h3>
+        <div class="rant-action">
+          <button class="button">Edit</button>
+        </div>
+      </header>
+      <section class="rant-content full-width">
+        <p>{{rant.body}}</p>
+      </section>
+    </div>
+  {{/each}}
+</main>

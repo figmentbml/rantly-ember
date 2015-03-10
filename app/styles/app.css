@@ -26,6 +26,8 @@ a {
   font: inherit;
   vertical-align: baseline;
   text-decoration: none;
+  color: #16a085;
+  text-decoration: none;
 }
 
 textarea {
@@ -72,9 +74,9 @@ header a {
   line-height: 23px;
 }
 
-header > a.new-button {
+button.new-button {
   float: right;
-  padding: 0;
+  padding: 6px 12px;
 }
 
 aside, section {
@@ -88,13 +90,19 @@ header.main {
   height: 47px;
 }
 
+header.main > a {
+  float: none;
+  padding: 0;
+}
+
+
 aside {
-  width: 25.3313%
+  width: 25.33%
 }
 
 section {
   float: right;
-  width: 74.6687%;
+  width: 74.66%;
 }
 
 .button {
@@ -106,10 +114,14 @@ section {
   border: 1px solid;
   border-radius: 3px;
   background: #1ABC9C;
-}
-
-a.button {
   display: inline-block;
+
+
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
 .button-invert {
@@ -160,7 +172,7 @@ header > h3 {
 
 .user {
   padding: 15px 15px 0px 15px;
-  width: 23.6202%;
+  width: 23%;
   min-height: 190px;
   margin-left: 15px;
   margin-bottom: 15px;

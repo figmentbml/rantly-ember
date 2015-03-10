@@ -1,18 +1,20 @@
 {{outlet}}
-
-{{#each rant in model}}
-<header class="rant-header">
-  <h3 class="rant-title">{{rant.title}}</h3>
-  <div class="rant-action">
-    <button class="button" ng-click="Edit()">Edit</button>
+<main id="scroll">
+  {{#each rant in model}}
+  <div class="rant-box">
+    <header class="rant-header">
+      <h3 class="rant-title">{{rant.title}}</h3>
+      <div class="rant-action">
+        <button class="button" ng-click="Edit()">Edit</button>
+      </div>
+    </header>
+    <aside>
+      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
+      </div>
+    </aside>
+    <section class="rant-content">
+      <p>{{rant.body}}</p>
+    </section>
   </div>
-</header>
-<aside>
-  <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
-  </div>
-</aside>
-<section class="rant-content">
-  <p>{{rant.body}}</p>
-</section>
-</div>
-{{/each}}
+  {{/each}}
+</main>

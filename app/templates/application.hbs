@@ -20,10 +20,11 @@
 
   <section class="content">
     <header class="main">
-
-      <a href="#/new" class="new-button">
-        <button class="button-invert button">New Rant</button>
-      </a>
+      {{#link-to 'rants.new'}}
+        <button class="button-invert button new-button">
+          New Rant
+        </button>
+      {{/link-to}}
     </header>
     {{outlet}}
   </section>
