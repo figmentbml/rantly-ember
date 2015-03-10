@@ -1,3 +1,31 @@
-<h2 id="title">Welcome to Ember.js</h2>
+<nav>
+  <header class="logo">
+    {{#link-to 'rants'}}Rantly{{/link-to}}
+  </header>
+  <header class="rantly">
+    {{#link-to 'rants'}}Rants{{/link-to}}
+    {{#link-to 'users'}}Users{{/link-to}}
+    {{#link-to 'signup'}}Sign Up{{/link-to}}
+  </header>
+</nav>
+<div class="wrapper">
+  <aside>
+    <header class="main">
+      Search
+    </header>
+    <section class="log-in">
+      <input type="text" placeholder="Your email">
+    </section>
+  </aside>
 
-{{outlet}}
+  <section class="content">
+    <header class="main">
+
+      <a href="#/new" class="new-button">
+        <button class="button-invert button">New Rant</button>
+      </a>
+    </header>
+    {{outlet}}
+  </section>
+
+</div>

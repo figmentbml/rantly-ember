@@ -5,13 +5,24 @@ module.exports = function(environment) {
     modulePrefix: 'rantly-ember',
     environment: environment,
     baseURL: '/',
-    locationType: 'auto',
+    // adapterURL: process.env.ADAPTER_URL,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
         // e.g. 'with-controller': true
       }
     },
+
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' https://cdn.mxpnl.com", // Allow scripts from https://cdn.mxpnl.com
+      'font-src': "'self' http://fonts.gstatic.com",  // Allow fonts to be loaded from http://fonts.gstatic.com
+      'connect-src': "'self' http://localhost:3000",
+      'img-src': "'self' http://www.gravatar.com/avatar/",
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+      'media-src': "'self'"
+    },
+
 
     APP: {
       // Here you can pass flags/options to your application instance

@@ -1,3 +1,267 @@
-html, body {
-  margin: 20px;
+/* app css stylesheet */
+*, :after, :before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.72222;
+  color: #34495e;
+  background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Laila, serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: inherit;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 18px;
+  line-height: 1.72222;
+  color: #34495E;
+  border: 2px solid #ECF0F1;
+  border-radius: 3px;
+  font: inherit;
+}
+
+.wrapper {
+  padding-left: 15px;
+  clear: both;
+  overflow: hidden;
+}
+
+nav {
+  background-color: #34495e;
+  min-height: 53px;
+  display: block;
+}
+
+.rantly {
+  font-size: 16px;
+}
+
+.logo {
+  font-size: 30px;
+  padding-left: 10px;
+}
+
+header a {
+  display: block;
+  position: relative;
+  color: #fff;
+  padding: 15px;
+  float: left;
+  font-weight: 700;
+  line-height: 23px;
+}
+
+header > a.new-button {
+  float: right;
+  padding: 0;
+}
+
+aside, section {
+  display: inline-block;
+}
+
+header.main {
+  background: #3498DB;
+  color: #fff;
+  padding: 7px 15px;
+  height: 47px;
+}
+
+aside {
+  width: 25.3313%
+}
+
+section {
+  float: right;
+  width: 74.6687%;
+}
+
+.button {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857;
+  text-align: center;
+  color: #fff;
+  border: 1px solid;
+  border-radius: 3px;
+  background: #1ABC9C;
+}
+
+a.button {
+  display: inline-block;
+}
+
+.button-invert {
+  background: #fff;
+  color: #1ABC9C;
+  border-color: #fff;
+}
+
+.rant-box {
+  width: 100%;
+  position: relative;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  border-radius: 3px;
+  clear: both;
+  overflow: hidden;
+}
+
+.rant-title {
+  width: 80%;
+  float: left;
+}
+
+.rant-action {
+  float: right;
+}
+
+.rant-content {
+  padding-left: 20px;
+}
+
+header > h3 {
+  width: 75%;
+  float: left;
+}
+
+.user-photo {
+  display: block;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 15px;
+  color: #34495E;
+  background: url(../img/author-photo-db65e861597528b36484917f92f1e0b3.png) center/cover no-repeat;
+  border: 4px dashed;
+  border-radius: 25px 25px 0;
+}
+
+.user {
+  padding: 15px 15px 0px 15px;
+  width: 23.6202%;
+  min-height: 190px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  float: left;
+}
+.user-show {
+  padding: 15px 15px 0px 15px;
+  width: 100%;
+  min-height: 190px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  float: left;
+}
+
+.user-photo-show {
+  display: block;
+  width: 50%;
+  height: 100px;
+  margin-bottom: 15px;
+  color: #34495E;
+  background: url(../img/author-photo-db65e861597528b36484917f92f1e0b3.png) center/cover no-repeat;
+  border: 4px dashed;
+  border-radius: 25px 25px 0;
+  float: right;
+  margin-right: 20px;
+}
+
+main#scroll {
+  padding: 15px 15px 0px 15px;
+}
+
+a > div.user > h5 {
+  margin-top: 4px;
+  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  text-decoration: none;
+  color: #34495e;
+}
+
+a > div.user > h6 {
+  margin-top: 3px;
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 18px;
+  text-transform: none;
+  margin-bottom: 0;
+  text-decoration: none;
+  color: #34495e;
+}
+
+section.full-width {
+  width: 100%;
+}
+
+.rant-form {
+  width: 100%;
+  position: relative;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
+  border-radius: 3px;
+  clear: both;
+  overflow: hidden;
+}
+
+.rant-header {
+  margin-bottom: 15px;
+  color: #34495E;
+  clear: both;
+  overflow: hidden;
+}
+
+.rant-header input {
+  font-family: Laila,serif;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #34495E;
+  border: none;
+  border-bottom: 2px solid #ECF0F1;
+  border-radius: 0;
+  padding: 0;
+  font-size: 29px;
+  width: 100%;
+}
+
+.rant-header-title {
+  float: left;
+  width: 60%;
+  border: none;
+}
+
+.rant-header-title>input:focus {
+  outline: none;
+  border-bottom: 1px solid #1ABC9C;
+}
+
+.rant-content>textarea:focus {
+  outline: none;
+  border: 1px solid #1ABC9C;
 }
