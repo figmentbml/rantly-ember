@@ -150,6 +150,11 @@ section {
   float: right;
 }
 
+.rant-action > .button {
+  float: left;
+  margin-left: 15px;
+}
+
 .rant-content {
   padding-left: 20px;
 }
