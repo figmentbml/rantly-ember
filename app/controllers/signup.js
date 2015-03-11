@@ -8,7 +8,7 @@ export default Ember.ArrayController.extend({
       var controller = this;
       var firstName = this.get('fnameCopy'),
           lastName  = this.get('lnameCopy'),
-          email     = this.get('emailCopy'),
+          email     = this.get('emailCopy').trim(),
           password  = this.get('password'),
           passwordConfirm  = this.get('passwordConfirm');
 
