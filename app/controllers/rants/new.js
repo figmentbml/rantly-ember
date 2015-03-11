@@ -14,7 +14,10 @@ export default Ember.ArrayController.extend({
       rant.save().then(function(){
         controller.transitionToRoute('rants');
       });
-  }
+    },
+    cancelRant: function() {
+      this.transitionToRoute('rants');
+    }
 
   }
 
