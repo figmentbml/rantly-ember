@@ -1,0 +1,47 @@
+<main id="scroll">
+  {{#if isEditing}}
+  <div class="rant-box">
+    <header class="rant-header">
+      <h3 class="rant-header-title">
+        {{input class="rant-header-focus" autofocus="true" value=title}}
+      </h3>
+      <div class="rant-action">
+        <button class="button" {{action 'saveRant' this}}>
+          <span class="icon-upload">Save</span>
+        </button>
+        <button class="button button-default" {{action 'cancelRant' this}}>
+          <span class="icon-exit">Cancel</span>
+        </button>
+        <button class="button button-default" {{action 'deleteRant' this}}>
+          <span class="icon">Delete</span>
+        </button>
+      </div>
+    </header>
+    <aside>
+      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
+      </div>
+    </aside>
+    <section class="rant-content">
+      <p>
+        {{textarea value=body rows="13"}}
+      </p>
+    </section>
+  </div>
+  {{else}}
+  <div class="rant-box">
+    <header class="rant-header">
+      <h3 class="rant-title">{{title}}</h3>
+      <div class="rant-action">
+        <button class="button" {{action 'editRant' rant}}>Edit</button>
+      </div>
+    </header>
+    <aside>
+      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
+      </div>
+    </aside>
+    <section class="rant-content">
+      <p>{{body}}</p>
+    </section>
+  </div>
+  {{/if}}
+</main>

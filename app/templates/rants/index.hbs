@@ -1,11 +1,15 @@
 <main id="scroll">
   {{#each rant in model}}
   {{#if isEditing}}
-    Editing time
+  Editing time
   {{/if}}
   <div class="rant-box">
     <header class="rant-header">
-      <h3 class="rant-title">{{rant.title}}</h3>
+      <h3 class="rant-title">
+        {{#link-to 'rant' rant}}
+          {{rant.title}}
+        {{/link-to}}
+      </h3>
       <div class="rant-action">
         <button class="button" {{action 'editRant' rant}}>Edit</button>
       </div>

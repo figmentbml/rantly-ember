@@ -8,6 +8,6 @@ export default Ember.ArrayController.extend({
 
     editRant: function(rant) {
       this.set('isEditing', true);
-    },
+    }
   }
 });
