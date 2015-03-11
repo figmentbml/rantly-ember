@@ -19,7 +19,7 @@ module.exports = function(environment) {
       'font-src': "'self' http://fonts.gstatic.com",  // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' http://localhost:3000",
       'img-src': "'self' http://www.gravatar.com/avatar/",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://css-spinners.com/css/spinner/spinner.css", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
       'media-src': "'self'"
     },
 

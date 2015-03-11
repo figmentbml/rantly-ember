@@ -332,3 +332,7 @@ textarea:focus, .register-form>input:focus, .log-in>input:focus {
   outline: 0;
   box-shadow: none;
 }
+
+.spinner-box {
+  margin: 50px;
+}
