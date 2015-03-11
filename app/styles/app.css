@@ -336,3 +336,10 @@ textarea:focus, .register-form>input:focus, .log-in>input:focus {
 .spinner-box {
   margin: 50px;
 }
+
+main#scroll {
+  float: right;
+  padding: 15px 15px 0;
+  height: 570px;
+  overflow: auto; /* append scrollbars if necessary */
+}
