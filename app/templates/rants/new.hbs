@@ -1,23 +1,25 @@
-<form class="rant-form">
-  <header class="rant-header">
-    <div class="rant-header-title">
-      {{input placeholder="Rant Title" autofocus="true" value=titleCopy}}
-    </div>
-    <div class="rant-action">
-      <button class="button" {{action 'newRant'}}>
-        <span class="icon-upload">Save</span>
-      </button>
-      <button class="button button-default" {{action 'cancelRant'}}>
-        <span class="icon-exit">Cancel</span>
-      </button>
-    </div>
-  </header>
-  <aside>
-    <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
-    </div>
-    0 Characters
-  </aside>
-  <section class="rant-content">
-    {{textarea placeholder="Start your rant" autofocus="true" value=bodyCopy rows="13"}}
-  </section>
-</form>
+<main id="scroll">
+  <form class="rant-form">
+    <header class="rant-header">
+      <div class="rant-header-title">
+        {{input class="rant-header-focus" placeholder="Rant Title" autofocus="true" value=titleCopy}}
+      </div>
+      <div class="rant-action">
+        <button class="button" {{action 'newRant'}}>
+          <span class="icon-upload">Save</span>
+        </button>
+        <button class="button button-default" {{action 'cancelRant'}}>
+          <span class="icon-exit">Cancel</span>
+        </button>
+      </div>
+    </header>
+    <aside>
+      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
+      </div>
+      0 Characters
+    </aside>
+    <section class="rant-content">
+      {{textarea placeholder="Start your rant" autofocus="true" value=bodyCopy rows="13"}}
+    </section>
+  </form>
+</main>
