@@ -30,7 +30,7 @@ a {
   text-decoration: none;
 }
 
-textarea {
+textarea, input {
   display: block;
   width: 100%;
   margin-bottom: 15px;
@@ -278,7 +278,23 @@ section.full-width {
   border-bottom: 1px solid #1ABC9C;
 }
 
-.rant-content>textarea:focus {
+.rant-content>textarea:focus, .register-form>input:focus {
   outline: none;
   border: 1px solid #1ABC9C;
+}
+
+.register-form {
+  position: relative;
+  padding: 15px;
+  border-radius: 3px;
+}
+
+.register-button {
+  width: 100%;
+}
+
+.log-in {
+  position: relative;
+  padding: 15px 0px;
+  border-radius: 3px;
 }

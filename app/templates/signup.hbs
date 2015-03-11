@@ -1,1 +1,11 @@
-{{outlet}}
+<main id="scroll">
+  <form class="register-form">
+    {{input placeholder="First Name" value=fnameCopy type=text}}
+    {{input placeholder="Last Name" value=lnameCopy}}
+    {{input placeholder="Email" value=emailCopy}}
+    {{input placeholder="Password" value=passwordCopy}}
+    <button class="button register-button" {{action 'register'}}>
+      Log in
+    </button>
+  </form>
+</main>
