@@ -19,6 +19,10 @@ h1, h2, h3, h4, h5, h6 {
   color: inherit;
 }
 
+h3 {
+  font-size: 29px;
+}
+
 a {
   margin: 0;
   padding: 0;
@@ -28,6 +32,10 @@ a {
   text-decoration: none;
   color: #16a085;
   text-decoration: none;
+}
+
+p {
+  margin: 0;
 }
 
 textarea, input {
@@ -41,6 +49,15 @@ textarea, input {
   border: 2px solid #ECF0F1;
   border-radius: 3px;
   font: inherit;
+}
+
+main {
+  padding: 15px 15px 0;
+}
+
+main#scroll {
+  height: 570px;
+  overflow: auto; /* append scrollbars if necessary */
 }
 
 .wrapper {
@@ -139,9 +156,13 @@ section {
   overflow: hidden;
 }
 
-.rant-title {
+h3.rant-title > a, h3.rant-title {
   width: 80%;
   float: left;
+  color: rgb(52, 73, 94);
+  padding: 0;
+  line-height: 1.1;
+  margin: 0;
 }
 
 .rant-action {
@@ -157,7 +178,7 @@ section {
   padding-left: 20px;
 }
 
-header > h3 {
+header > a > h3 {
   width: 75%;
   float: left;
 }
@@ -205,10 +226,6 @@ header > h3 {
   margin-right: 20px;
 }
 
-main#scroll {
-  padding: 15px 15px 0px 15px;
-}
-
 a > div.user > h5 {
   margin-top: 4px;
   margin-bottom: 3px;
@@ -253,11 +270,6 @@ section.full-width {
 }
 
 
-
-.rant-title > a {
-  color: rgb(52, 73, 94);
-}
-
 .rant-header input {
   font-family: Laila,serif;
   font-weight: 700;
@@ -271,9 +283,15 @@ section.full-width {
   width: 100%;
 }
 
-.rant-header h3 {
+.rant-header > a {
+  float: none;
+  padding: 0px;
+}
+
+.rant-header > a > h3 {
   margin-bottom: 0;
   margin-top: 0;
+
 }
 
 .rant-header-title {
@@ -337,9 +355,13 @@ textarea:focus, .register-form>input:focus, .log-in>input:focus {
   margin: 50px;
 }
 
-main#scroll {
-  float: right;
-  padding: 15px 15px 0;
-  height: 570px;
-  overflow: auto; /* append scrollbars if necessary */
+.droid-header-title, .droid-content {
+  text-align: center;
+  width: 100%;
+}
+
+.droid-content > p {
+  margin: 0 0 15px;
+  font-size: 18px;
+  line-height: 1.72222;
 }

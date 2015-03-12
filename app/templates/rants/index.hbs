@@ -33,11 +33,11 @@
 
     <div class="rant-box">
       <header class="rant-header">
-        <h3 class="rant-title">
-          {{#link-to 'rant' this}}
+        {{#link-to 'rant' this}}
+          <h3 class="rant-title">
             {{title}}
-          {{/link-to}}
-        </h3>
+          </h3>
+        {{/link-to}}
         <div class="rant-action">
           <button class="button" {{action 'editRant' rant}}>Edit</button>
         </div>
