@@ -16,7 +16,12 @@
     <aside>
       <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
       </div>
-      0 Characters
+      {{#if bodyCopy}}
+        {{bodyCopy.length}}
+      {{else}}
+        0 
+      {{/if}}
+      Characters
     </aside>
     <section class="rant-content">
       {{textarea placeholder="Start your rant" autofocus="true" value=bodyCopy rows="13"}}
