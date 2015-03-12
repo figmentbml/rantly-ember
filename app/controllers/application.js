@@ -6,10 +6,20 @@ export default Ember.ArrayController.extend({
 
     queryRants: function() {
       var query = this.get('search');
-      this.store.find('rant', {find: query}).then(function(result) {
-        this.set('model', result);
-      }.bind(this));
-      this.transitionToRoute('rants.search', { queryParams: {term: query} });
+      var controller = this;
+      console.log(typeof(query));
+      console.log(query);
+      var input = document.getElementsByClassName("rant-search-field")[0];
+      if ((typeof(query) === 'undefined') || (query === '')) {
+        input.placeholder = "This can't be blank!";
+      } else {
+        controller.store.find('rant', {find: query}).then(function(result) {
+          controller.set('model', result);
+        });
+        input.placeholder = "Search";
+        controller.set('search', '');
+        controller.transitionToRoute('rants.search', { queryParams: {term: query} });
+      }
     }
   }
 });
