@@ -31,8 +31,7 @@ export default Ember.ObjectController.extend({
       } else if (title.length === 0) {
         var error = document.createTextNode("Your rant must have a title.");
         input.appendChild(error);
-      }
-      else {
+      } else {
         rant.set('title', title);
         rant.set('body', body);
         rant.save().then(function(){

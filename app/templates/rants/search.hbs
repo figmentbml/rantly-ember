@@ -20,12 +20,12 @@
             </div>
           </header>
           <aside>
-            <div style="background-image: url(http://www.gravatar.com/avatar/{{rant.user.email}})" class="user-photo">
+            <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
             </div>
           </aside>
           <section class="rant-content">
             <p>
-              {{textarea value=rant.body }}
+              {{textarea value=rant.body}}
             </p>
           </section>
         </div>
@@ -33,12 +33,14 @@
         <div class="rant-box">
           <header class="rant-header">
             <h3 class="rant-title">
-              {{#link-to 'rant' this}}
-              {{rant.title}}
+              {{#link-to 'rant' rant}}
+                {{rant.title}}
               {{/link-to}}
             </h3>
             <div class="rant-action">
-              <button class="button" {{action 'editRant' rant}}>Edit</button>
+              <button class="button" {{action 'editRant' rant}}>
+                <i class="fa fa-pencil-square-o"></i> Edit
+              </button>
             </div>
           </header>
           <aside>
