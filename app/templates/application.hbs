@@ -16,8 +16,10 @@
       </div>
     </header>
     <div class="log-in">
-      {{input placeholder="Email" value=emailHere}}
-      {{input placeholder="Password" value=passwordHere}}
+      <i class="fa fa-user fa-lg log-in-field log-in-email"></i>
+      {{input class="email" placeholder="Your Email" value=emailHere}}
+      <i class="fa fa-lock fa-lg log-in-field log-in-pass"></i>
+      {{input class="pass" placeholder="Your Password" value=passwordHere}}
       <button class="button register-button" {{action 'logIn'}}>
         Log in
       </button>

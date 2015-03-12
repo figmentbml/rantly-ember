@@ -16,10 +16,10 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' https://cdn.mxpnl.com", // Allow scripts from https://cdn.mxpnl.com
-      'font-src': "'self' http://fonts.gstatic.com",  // Allow fonts to be loaded from http://fonts.gstatic.com
+      'font-src': "'self' http://fonts.gstatic.com http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0",  // Allow fonts to be loaded from http://fonts.gstatic.com
       'connect-src': "'self' http://localhost:3000",
       'img-src': "'self' http://www.gravatar.com/avatar/",
-      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://css-spinners.com/css/spinner/spinner.css", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
+      'style-src': "'self' 'unsafe-inline' http://fonts.googleapis.com http://css-spinners.com/css/spinner/spinner.css http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", // Allow inline styles and loaded CSS from http://fonts.googleapis.com
       'media-src': "'self'"
     },
 

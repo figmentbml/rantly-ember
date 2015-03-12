@@ -8,13 +8,13 @@
         </h3>
         <div class="rant-action">
           <button class="button" {{action 'saveRant' this}}>
-            <span class="icon-upload">Save</span>
+            <i class="fa fa-save"></i> Save
           </button>
           <button class="button button-default" {{action 'cancelRant' this}}>
-            <span class="icon-exit">Cancel</span>
+            <i class="fa fa-share-square-o"></i> Cancel
           </button>
           <button class="button button-default" {{action 'deleteRant' this}}>
-            <span class="icon">Delete</span>
+            <i class="fa fa-trash-o"></i> Delete
           </button>
         </div>
       </header>
@@ -39,7 +39,9 @@
           </h3>
         {{/link-to}}
         <div class="rant-action">
-          <button class="button" {{action 'editRant' rant}}>Edit</button>
+          <button class="button" {{action 'editRant' rant}}>
+            <i class="fa fa-pencil-square-o"></i> Edit
+          </button>
         </div>
       </header>
       <aside>

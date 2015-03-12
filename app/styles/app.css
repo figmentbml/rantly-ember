@@ -365,3 +365,13 @@ textarea:focus, .register-form>input:focus, .log-in>input:focus {
   font-size: 18px;
   line-height: 1.72222;
 }
+
+.log-in-field, .register-field {
+  position: absolute;
+  right: 15px;
+  color: #bfc9ca;
+  line-height: 2.5;
+  -webkit-transition: all .25s;
+  transition: all .25s;
+  padding-right: 15px;
+}
