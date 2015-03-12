@@ -8,6 +8,7 @@ export default Ember.ArrayController.extend({
       var query = this.get('search');
       var controller = this;
       var input = document.getElementsByClassName("rant-search-field")[0];
+      
       if ((typeof(query) === 'undefined') || (query === '')) {
         input.placeholder = "This can't be blank!";
       } else {
