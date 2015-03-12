@@ -1,6 +1,3 @@
-{{outlet}}
-
-
 <div class="user-show">
   <aside>
     <h5>
@@ -17,13 +14,14 @@
 
 <main id="scroll">
 
-  {{#each rant in rants class="rant-box"}}
-    <div class="rant">
+  {{#each rant in rants}}
+    <div class="rant-box">
       <header class="rant-header">
-        <h3 class="rant-title">{{rant.title}}</h3>
-        <div class="rant-action">
-          <button class="button">Edit</button>
-        </div>
+        {{#link-to 'rant' this}}
+        <h3 class="rant-title">
+          {{rant.title}}
+        </h3>
+        {{/link-to}}
       </header>
       <section class="rant-content full-width">
         <p>{{rant.body}}</p>
