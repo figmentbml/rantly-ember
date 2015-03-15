@@ -158,6 +158,14 @@ section {
   border-color: #fff;
 }
 
+.button-default {
+  background-color: rgb(192, 192, 192);
+}
+
+.button-warning {
+  background-color: rgb(241, 196, 15);
+}
+
 .rant-box {
   width: 100%;
   position: relative;
@@ -391,4 +399,12 @@ textarea:focus, .register-form>input:focus, .log-in>input:focus {
 
 .errors {
   color: red;
+}
+
+.fadeout {
+  -webkit-transition: all 2s ease-in-out;
+  -moz-transition: all 2s ease-in-out;
+  -ms-transition: all 2s ease-in-out;
+  -o-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
 }
