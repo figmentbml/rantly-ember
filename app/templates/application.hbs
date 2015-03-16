@@ -15,19 +15,26 @@
         {{input type="search" class="rant-search-field" placeholder="Search" value=search action="queryRants"}}
       </div>
     </header>
-    <form class="log-in">
-      <i class="fa fa-user fa-lg log-in-field log-in-email"></i>
-      {{input class="email" placeholder="Your Email" value=emailHere}}
-      <i class="fa fa-lock fa-lg log-in-field log-in-pass"></i>
-      {{input class="pass" placeholder="Your Password" value=passwordHere}}
-      <button class="button register-button" {{action 'signIn'}}>
-        Log in
-      </button>
+    {{#if loggedIn}}
+    <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo-show">
+    <button class="button register-button" {{action 'signOut'}}>
+      Log out
+    </button>
+    {{else}}
+      <form class="log-in">
+          <i class="fa fa-user fa-lg log-in-field log-in-email"></i>
+          {{input class="email" placeholder="Your Email" value=emailHere}}
+          <i class="fa fa-lock fa-lg log-in-field log-in-pass"></i>
+          {{input class="pass" placeholder="Your Password" value=passwordHere}}
+          <button class="button register-button" {{action 'signIn'}}>
+            Log in
+          </button>
 
-      {{#if errorMessage}}
-      <div>{{errorMessage}}</div>
-      {{/if}}
-    </form>
+          {{#if errorMessage}}
+          <div>{{errorMessage}}</div>
+        {{/if}}
+      </form>
+    {{/if}}
   </aside>
 
   <section class="content">

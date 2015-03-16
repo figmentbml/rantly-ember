@@ -2,6 +2,8 @@ import Ember from "ember";
 
 export default Ember.ArrayController.extend({
 
+  loggedIn: false,
+
   setupController: function(controller) {
     controller.reset();
   },
@@ -40,9 +42,15 @@ export default Ember.ArrayController.extend({
       controller.set('errorMessage', null);
       var session = controller.store.createRecord('session', data);
       session.save().then(function(){
+        controller.set('loggedIn', true);
         localStorage.setItem('authToken', session._data.token);
         controller.transitionToRoute('rants');
       });
+    },
+
+    signOut: function() {
+      localStorage.clear();
+      this.controller.transitionToRoute('rants');
     }
 
     }
