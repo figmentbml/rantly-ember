@@ -4,18 +4,6 @@ export default Ember.ArrayController.extend({
 
   loggedIn: false,
 
-  setupController: function(controller) {
-    controller.reset();
-  },
-
-  reset: function() {
-    this.setProperties({
-      email: '',
-      password: '',
-      errorMessage: ''
-    });
-  },
-
   actions: {
 
     queryRants: function() {
@@ -43,6 +31,9 @@ export default Ember.ArrayController.extend({
       var session = controller.store.createRecord('session', data);
       session.save().then(function(){
         controller.set('loggedIn', true);
+        controller.set('emailHere', '');
+        controller.set('passwordHere', '');
+        controller.set('errorMessage', '');
         localStorage.setItem('authToken', session._data.token);
         controller.transitionToRoute('rants');
       });
@@ -50,8 +41,9 @@ export default Ember.ArrayController.extend({
 
     signOut: function() {
       localStorage.clear();
-      this.controller.transitionToRoute('rants');
-    }
+      this.set('loggedIn', false);
+      this.transitionToRoute('rants');
+    },
 
     }
 });
