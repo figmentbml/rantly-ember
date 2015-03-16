@@ -17,7 +17,7 @@
   {{#each rant in rants}}
     <div class="rant-box">
       <header class="rant-header">
-        {{#link-to 'rant' this}}
+        {{#link-to 'rant' rant.id}}
         <h3 class="rant-title">
           {{rant.title}}
         </h3>
