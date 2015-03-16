@@ -15,15 +15,19 @@
         {{input type="search" class="rant-search-field" placeholder="Search" value=search action="queryRants"}}
       </div>
     </header>
-    <div class="log-in">
+    <form class="log-in">
       <i class="fa fa-user fa-lg log-in-field log-in-email"></i>
       {{input class="email" placeholder="Your Email" value=emailHere}}
       <i class="fa fa-lock fa-lg log-in-field log-in-pass"></i>
       {{input class="pass" placeholder="Your Password" value=passwordHere}}
-      <button class="button register-button" {{action 'logIn'}}>
+      <button class="button register-button" {{action 'signIn'}}>
         Log in
       </button>
-    </div>
+
+      {{#if errorMessage}}
+      <div>{{errorMessage}}</div>
+      {{/if}}
+    </form>
   </aside>
 
   <section class="content">
