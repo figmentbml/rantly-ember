@@ -4,7 +4,6 @@ export default Ember.ArrayController.extend({
 
   loggedIn: false,
 
-  currentUserEmail: null,
   currentUser: null,
 
   needs: ['rant'],
@@ -36,15 +35,9 @@ export default Ember.ArrayController.extend({
       controller.set('errorMessage', null);
       var session = controller.store.createRecord('session', { email: email, password: password});
       session.save().then(function(){
-        console.log(session);
         localStorage.setItem('authToken', session._data.token);
         controller.set('currentUser', session._data.user._data.id);
-
         controller.set('loggedIn', true);
-        controller.set('currentUserEmail', email);
-        var foo = controller.get('currentUser');
-        console.log(foo);
-        controller.set('isEditable', true);
         controller.set('emailHere', '');
         controller.set('passwordHere', '');
         controller.set('errorMessage', '');
@@ -55,8 +48,6 @@ export default Ember.ArrayController.extend({
     signOut: function() {
       localStorage.clear();
       this.set('loggedIn', false);
-      this.set('isEditable', false);
-      this.set('currentUserEmail', null);
       this.set('currentUser', null);
       this.transitionToRoute('rants');
     },
