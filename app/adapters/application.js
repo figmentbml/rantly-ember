@@ -11,6 +11,6 @@ export default DS.ActiveModelAdapter.extend({
         "Authorization": "" + token
       };
     }
-  }.property('signin.authToken')
+  }.property('signin.authToken'),
 
 });
