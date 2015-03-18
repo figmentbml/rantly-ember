@@ -2,6 +2,8 @@ import Ember from "ember";
 
 export default Ember.ArrayController.extend({
 
+  needs: ['application'],
+
   actions: {
     newRant: function(){
       var controller = this;

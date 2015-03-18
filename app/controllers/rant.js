@@ -27,10 +27,12 @@ export default Ember.ObjectController.extend({
     editRant: function(rant) {
       this.set('isEditing', true);
     },
+
     cancelRant: function(rant) {
       this.set('isEditing', false);
       this.transitionToRoute('rant', rant.id);
     },
+    
     saveRant: function(rant){
       var controller = this;
       var title = this.get('title');

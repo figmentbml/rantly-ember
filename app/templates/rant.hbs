@@ -36,9 +36,11 @@
   <div class="rant-box">
     <header class="rant-header">
       <h3 class="rant-title">{{title}}</h3>
-      {{#if loggedIn}}
+      {{#if rantMatch}}
         <div class="rant-action">
-          <button class="button" {{action 'editRant' rant}}>Edit</button>
+          <button class="button" {{action 'editRant' rant}}>
+            <i class="fa fa-pencil-square-o"></i> Edit
+          </button>
         </div>
       {{/if}}
     </header>

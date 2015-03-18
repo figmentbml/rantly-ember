@@ -3,7 +3,6 @@ import Ember from "ember";
 export default Ember.ArrayController.extend({
 
   loggedIn: false,
-
   currentUser: null,
 
   needs: ['rant'],
