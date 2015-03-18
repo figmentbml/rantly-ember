@@ -5,7 +5,10 @@
   <header class="rantly">
     {{#link-to 'rants'}}Rants{{/link-to}}
     {{#link-to 'users'}}Users{{/link-to}}
-    {{#link-to 'signup'}}Sign Up{{/link-to}}
+    {{#if loggedIn}}
+    {{else}}
+      {{#link-to 'signup'}}Sign Up{{/link-to}}
+    {{/if}}
   </header>
 </nav>
 <div class="wrapper">
@@ -40,15 +43,14 @@
 
   <section class="content">
     <header class="main">
-      {{#link-to 'rants.new'}}
-        <button class="button-invert button new-button">
-          New Rant
-        </button>
-      {{/link-to}}
+      {{#if loggedIn}}
+        {{#link-to 'rants.new'}}
+          <button class="button-invert button new-button">
+            New Rant
+          </button>
+        {{/link-to}}
+      {{/if}}
     </header>
-    <div class="flash-message">
-      <h2>{{message-queue}}</h2>
-    </div>
     {{outlet}}
   </section>
 

@@ -5,17 +5,17 @@
       <h3 class="rant-header-title">
         {{input class="rant-header-focus" autofocus="true" value=title}}
       </h3>
-      <div class="rant-action">
-        <button class="button" {{action 'saveRant' this}}>
-          <i class="fa fa-save"></i> Save
-        </button>
-        <button class="button button-default" {{action 'cancelRant' this}}>
-          <i class="fa fa-share-square-o"></i> Cancel
-        </button>
-        <button class="button button-warning" {{action 'deleteRant' this}}>
-          <i class="fa fa-trash-o"></i> Delete
-        </button>
-      </div>
+        <div class="rant-action">
+          <button class="button" {{action 'saveRant' this}}>
+            <i class="fa fa-save"></i> Save
+          </button>
+          <button class="button button-default" {{action 'cancelRant' this}}>
+            <i class="fa fa-share-square-o"></i> Cancel
+          </button>
+          <button class="button button-warning" {{action 'deleteRant' this}}>
+            <i class="fa fa-trash-o"></i> Delete
+          </button>
+        </div>
     </header>
     <aside>
       <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
@@ -36,9 +36,11 @@
   <div class="rant-box">
     <header class="rant-header">
       <h3 class="rant-title">{{title}}</h3>
-      <div class="rant-action">
-        <button class="button" {{action 'editRant' rant}}>Edit</button>
-      </div>
+      {{#if loggedIn}}
+        <div class="rant-action">
+          <button class="button" {{action 'editRant' rant}}>Edit</button>
+        </div>
+      {{/if}}
     </header>
     <aside>
       <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">

@@ -6,20 +6,22 @@
         <h3 class="rant-header-title">
           {{input class="rant-header-focus" autofocus="true" value=title}}
         </h3>
-        <div class="rant-action">
-          <button class="button" {{action 'saveRant' this}}>
-            <i class="fa fa-save"></i> Save
-          </button>
-          <button class="button button-default" {{action 'cancelRant' this}}>
-            <i class="fa fa-share-square-o"></i> Cancel
-          </button>
-          <button class="button button-warning" {{action 'deleteRant' this}}>
-            <i class="fa fa-trash-o"></i> Delete
-          </button>
-        </div>
+          <div class="rant-action">
+            <button class="button" {{action 'saveRant' this}}>
+              <i class="fa fa-save"></i> Save
+            </button>
+            <button class="button button-default" {{action 'cancelRant' this}}>
+              <i class="fa fa-share-square-o"></i> Cancel
+            </button>
+            <button class="button button-warning" {{action 'deleteRant' this}}>
+              <i class="fa fa-trash-o"></i> Delete
+            </button>
+          </div>
       </header>
       <aside>
-        <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
+        <div style="background-image: url(http://www.gravatar.com/avatar/{{rant.user.email}})" class="user-photo">
+        </div>
+        <div style={{rant.gravatarURL}} class="user-photo">
         </div>
         {{body.length}}
         Characters
@@ -43,11 +45,13 @@
             {{title}}
           </h3>
         {{/link-to}}
-        <div class="rant-action">
-          <button class="button" {{action 'editRant' rant}}>
-            <i class="fa fa-pencil-square-o"></i> Edit
-          </button>
-        </div>
+        {{#if rantMatch}}
+          <div class="rant-action">
+            <button class="button" {{action 'editRant' rant}}>
+              <i class="fa fa-pencil-square-o"></i> Edit
+            </button>
+          </div>
+        {{/if}}
       </header>
       <aside>
         <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
