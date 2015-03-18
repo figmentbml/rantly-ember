@@ -4,6 +4,11 @@ export default Ember.ArrayController.extend({
 
   loggedIn: false,
 
+  currentUserEmail: null,
+  currentUser: null,
+
+  needs: ['rant'],
+
   actions: {
 
     queryRants: function() {
@@ -25,16 +30,24 @@ export default Ember.ArrayController.extend({
 
     signIn: function() {
       var controller = this;
-      var data = { email: this.get('emailHere'), password: this.get('passwordHere')};
+      var email = this.get('emailHere');
+      var password = this.get('passwordHere');
 
       controller.set('errorMessage', null);
-      var session = controller.store.createRecord('session', data);
+      var session = controller.store.createRecord('session', { email: email, password: password});
       session.save().then(function(){
+        console.log(session);
+        localStorage.setItem('authToken', session._data.token);
+        controller.set('currentUser', session._data.user._data.id);
+
         controller.set('loggedIn', true);
+        controller.set('currentUserEmail', email);
+        var foo = controller.get('currentUser');
+        console.log(foo);
+        controller.set('isEditable', true);
         controller.set('emailHere', '');
         controller.set('passwordHere', '');
         controller.set('errorMessage', '');
-        localStorage.setItem('authToken', session._data.token);
         controller.transitionToRoute('rants');
       });
     },
@@ -42,6 +55,9 @@ export default Ember.ArrayController.extend({
     signOut: function() {
       localStorage.clear();
       this.set('loggedIn', false);
+      this.set('isEditable', false);
+      this.set('currentUserEmail', null);
+      this.set('currentUser', null);
       this.transitionToRoute('rants');
     },
 

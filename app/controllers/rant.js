@@ -4,6 +4,24 @@ export default Ember.ObjectController.extend({
 
   isEditing: false,
 
+  needs: ['application'],
+
+  gravatarURL: function(email, size) {
+    return 'background-image: url(http://www.gravatar.com/avatar/' + md5(this.user.email) + ')';
+  },
+
+  rantMatch: function() {
+    var rantUser = this.model._data.user.id;
+    var appController = this.get('controllers.application');
+    var appUser = appController.currentUser;
+    var controller = this;
+    if ((appUser>0) && (rantUser>0)) {
+      if (rantUser == appUser) {
+        return true;
+      }
+    }
+  }.property('rantMatch'),
+
   actions: {
 
     editRant: function(rant) {
@@ -42,6 +60,9 @@ export default Ember.ObjectController.extend({
     },
 
     deleteRant: function(rant) {
+      var input = document.getElementsByClassName("rant-box")[0];
+
+      input.addClass("fadeout");
       rant.deleteRecord();
       rant.save().then(function(){
         this.transitionToRoute('rants');
