@@ -1,12 +1,15 @@
 <main>
+  <div class="errors text-center">
+
+  </div>
   <form class="register-form">
     {{input placeholder="First Name" value=fnameCopy type=text}}
     {{input placeholder="Last Name" value=lnameCopy}}
     {{input placeholder="Email" value=emailCopy}}<i class="fa fa-lock fa-lg register-field"></i>
-    {{input placeholder="Password" value=passwordCopy}}<i class="fa fa-lock fa-lg register-field"></i>
-    {{input placeholder="Password Confirmation" value=passwordConfirm}}
+    {{input placeholder="Password" value=passwordCopy type="password"}}<i class="fa fa-lock fa-lg register-field"></i>
+    {{input placeholder="Password Confirmation" value=passwordConfirm type="password"}}
     <button class="button register-button" {{action 'register'}}>
-      Log in
+      Sign Up
     </button>
   </form>
 </main>
