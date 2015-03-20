@@ -18,8 +18,7 @@
         </div>
     </header>
     <aside>
-      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
-      </div>
+      <div>{{gravatar-image email= user.email class='user-photo'}}</div>
       {{body.length}}
       Characters
       <div class="errors">
@@ -45,8 +44,7 @@
       {{/if}}
     </header>
     <aside>
-      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
-      </div>
+      <div>{{gravatar-image email= user.email class='user-photo'}}</div>
       This rant has {{body.length}} characters.
     </aside>
     <section class="rant-content">

@@ -60,19 +60,6 @@ main#scroll {
   overflow: auto; /* append scrollbars if necessary */
 }
 
-.flash-message {
-  text-align: center;
-}
-
-.flash_message-success {
-  padding-bottom: 20px;
-}
-
-.flash_message-fail {
-  border: 2px solid red;
-  padding-bottom: 20px;
-}
-
 .wrapper {
   padding-left: 15px;
   clear: both;
@@ -228,7 +215,6 @@ header > a > h3 {
 .user-show {
   padding: 15px 15px 0px 15px;
   width: 100%;
-  min-height: 190px;
   margin-left: 15px;
   margin-bottom: 15px;
   box-shadow: 0 1px 4px 0 rgba(0,0,0,.2);
@@ -236,16 +222,8 @@ header > a > h3 {
 }
 
 .user-photo-show {
-  display: block;
+  margin: 0 auto;
   width: 50%;
-  height: 100px;
-  margin-bottom: 15px;
-  color: #34495E;
-  background: url(../img/author-photo-db65e861597528b36484917f92f1e0b3.png) center/cover no-repeat;
-  border: 4px dashed;
-  border-radius: 25px 25px 0;
-  float: right;
-  margin-right: 20px;
 }
 
 a > div.user > h5 {
@@ -408,4 +386,8 @@ textarea:focus, .register-form>input:focus, .log-in>input:focus {
   -ms-transition: all 2s ease-in-out;
   -o-transition: all 2s ease-in-out;
   transition: all 2s ease-in-out;
+}
+
+.text-center {
+  text-align: center;
 }

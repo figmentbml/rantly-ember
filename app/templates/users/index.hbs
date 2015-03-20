@@ -2,9 +2,9 @@
   {{#each user in model}}
     {{#link-to 'user' user}}
       <div class="user">
-        <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
-        </div>
-        <h5>
+        <div>{{gravatar-image email=user.email class='user-photo'}}</div>
+
+         <h5>
           {{user.firstName}}
           {{user.lastName}}
         </h5>

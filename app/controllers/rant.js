@@ -6,10 +6,6 @@ export default Ember.ObjectController.extend({
 
   needs: ['application'],
 
-  gravatarURL: function(email, size) {
-    return 'background-image: url(http://www.gravatar.com/avatar/' + md5(this.user.email) + ')';
-  },
-
   rantMatch: function() {
     var rantUser = this.model._data.user.id;
     var appController = this.get('controllers.application');
@@ -32,7 +28,7 @@ export default Ember.ObjectController.extend({
       this.set('isEditing', false);
       this.transitionToRoute('rant', rant.id);
     },
-    
+
     saveRant: function(rant){
       var controller = this;
       var title = this.get('title');
