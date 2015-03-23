@@ -28,18 +28,30 @@ export default Ember.ArrayController.extend({
       var controller = this;
       var email = controller.get('emailHere');
       var password = controller.get('passwordHere');
+      var input = document.getElementsByClassName("errors")[0];
 
-      controller.set('errorMessage', null);
-      var session = controller.store.createRecord('session', { email: email, password: password});
-      session.save().then(function(){
-        localStorage.setItem('authToken', session._data.token);
-        controller.set('currentUser', session._data.user);
-        controller.set('loggedIn', true);
-        controller.set('emailHere', '');
-        controller.set('passwordHere', '');
-        controller.set('errorMessage', '');
-        controller.transitionToRoute('rants');
-      });
+      if (
+        ((email == null) || (email.length < 0)) ||
+        ((password == null) || (password.length < 0))
+      ) {
+        var error = document.createTextNode("All fields are required!");
+        input.appendChild(error);
+      } else {
+        var session = controller.store.createRecord('session', { email: email, password: password});
+        session.save().then(function(){
+          if (session._data.success === true) {
+            localStorage.setItem('authToken', session._data.token);
+            controller.set('currentUser', session._data.user);
+            controller.set('loggedIn', true);
+            controller.set('emailHere', '');
+            controller.set('passwordHere', '');
+            controller.transitionToRoute('rants');
+          } else {
+            var error = document.createTextNode("Invalid email / password!");
+            input.appendChild(error);
+          }
+        });
+      }
     },
 
     signOut: function() {
