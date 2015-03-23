@@ -9,6 +9,8 @@ export default Ember.ArrayController.extend({
       var controller = this;
       var title = this.get('titleCopy');
       var body = this.get('bodyCopy');
+      var app = this.get('controllers.application');
+      var user = app.currentUser;
 
       var input = document.getElementsByClassName("errors")[0];
 
@@ -24,7 +26,7 @@ export default Ember.ArrayController.extend({
         var error = document.createTextNode("Your rant must have a title.");
         input.appendChild(error);
       } else {
-          var rant = controller.store.createRecord('rant', { title: title, body: body });
+          var rant = controller.store.createRecord('rant', { title: title, body: body, user: user });
           controller.set('titleCopy', '');
           controller.set('bodyCopy', '');
           rant.save().then(function(){

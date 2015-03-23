@@ -5,8 +5,6 @@ export default Ember.ArrayController.extend({
   loggedIn: false,
   currentUser: null,
 
-  needs: ['rant'],
-
   actions: {
 
     queryRants: function() {
@@ -28,14 +26,14 @@ export default Ember.ArrayController.extend({
 
     signIn: function() {
       var controller = this;
-      var email = this.get('emailHere');
-      var password = this.get('passwordHere');
+      var email = controller.get('emailHere');
+      var password = controller.get('passwordHere');
 
       controller.set('errorMessage', null);
       var session = controller.store.createRecord('session', { email: email, password: password});
       session.save().then(function(){
         localStorage.setItem('authToken', session._data.token);
-        controller.set('currentUser', session._data.user._data.id);
+        controller.set('currentUser', session._data.user);
         controller.set('loggedIn', true);
         controller.set('emailHere', '');
         controller.set('passwordHere', '');

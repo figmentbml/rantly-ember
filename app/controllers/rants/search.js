@@ -11,6 +11,7 @@ export default Ember.ArrayController.extend({
 
   isEditing: false,
 
+
   actions: {
 
     editRant: function(rant) {
