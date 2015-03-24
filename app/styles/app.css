@@ -91,6 +91,10 @@ header a {
   line-height: 23px;
 }
 
+header a.new-cancel {
+  padding: 0px 0px 0px 15px;
+}
+
 button.new-button {
   float: right;
   padding: 6px 12px;

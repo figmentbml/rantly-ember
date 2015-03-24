@@ -8,9 +8,11 @@
         <button class="button" {{action 'newRant'}}>
           <i class="fa fa-save"></i> Save
         </button>
-        <button class="button button-default" {{action 'cancelRant'}}>
-          <i class="fa fa-share-square-o"></i> Cancel
-        </button>
+        {{#link-to 'rants.index' class="new-cancel"}}
+          <button class="button button-default">
+            <i class="fa fa-share-square-o"></i> Cancel
+          </button>
+        {{/link-to}}
       </div>
     </header>
     <aside>

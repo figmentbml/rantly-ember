@@ -33,12 +33,7 @@ export default Ember.ArrayController.extend({
             controller.transitionToRoute('rants.index');
           });
         }
-
-    },
-    cancelRant: function() {
-      this.transitionToRoute('rants');
+      }
     }
-
-  }
 
 });
