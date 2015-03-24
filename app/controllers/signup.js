@@ -39,7 +39,7 @@ export default Ember.ArrayController.extend({
             controller.set('emailCopy', '');
             controller.set('passwordCopy', '');
             controller.set('passwordConfirm', '');
-            controller.transitionToRoute('rants');
+            controller.transitionToRoute('rants.index');
           });
     }
   },

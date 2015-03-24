@@ -19,7 +19,7 @@ export default Ember.ArrayController.extend({
     },
     cancelRant: function(rant) {
       this.set('isEditing', false);
-      this.transitionToRoute('rants');
+      this.transitionToRoute('rants.index');
     },
     saveRant: function(rant){
       var controller = this;
@@ -34,17 +34,17 @@ export default Ember.ArrayController.extend({
         var errorBody = document.createTextNode("Your rant must be at least 144 characters.");
         input.appendChild(errorBody);
       } else if ((body == null) || (body.length < 143)) {
-        var error = document.createTextNode("Your rant must be at least 144 characters.");
-        input.appendChild(error);
+        var error2 = document.createTextNode("Your rant must be at least 144 characters.");
+        input.appendChild(error2);
       } else if (title.length === 0) {
-        var error = document.createTextNode("Your rant must have a title.");
-        input.appendChild(error);
+        var error3 = document.createTextNode("Your rant must have a title.");
+        input.appendChild(error3);
       } else {
       rant.set('title', title);
       rant.set('body', body);
       rant.save().then(function(){
         this.set('isEditing', false);
-        this.transitionToRoute('rants');
+        this.transitionToRoute('rants.index');
       }.bind(this));
     }
     },

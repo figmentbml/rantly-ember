@@ -26,11 +26,11 @@ export default Ember.ArrayController.extend({
         var error = document.createTextNode("Your rant must have a title.");
         input.appendChild(error);
       } else {
-          var rant = controller.store.createRecord('rant', { title: title, body: body, user: user });
+          var rant = controller.store.createRecord('rant', { title: title, body: body });
           controller.set('titleCopy', '');
           controller.set('bodyCopy', '');
           rant.save().then(function(){
-            controller.transitionToRoute('rants');
+            controller.transitionToRoute('rants.index');
           });
         }
 

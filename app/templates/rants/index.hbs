@@ -1,19 +1,19 @@
 <main id="scroll">
-  {{#each itemController="rant"}}
-    {{#if isEditing}}
+  {{#each rant in controller}}
+    {{#if rant.isEditing}}
     <div class="rant-box">
       <header class="rant-header">
         <h3 class="rant-header-title">
-          {{input class="rant-header-focus" autofocus="true" value=title}}
+          {{input class="rant-header-focus" autofocus="true" value=rant.title}}
         </h3>
           <div class="rant-action">
-            <button class="button" {{action 'saveRant' this}}>
+            <button class="button" {{action 'saveRant' rant}}>
               <i class="fa fa-save"></i> Save
             </button>
-            <button class="button button-default" {{action 'cancelRant' this}}>
+            <button class="button button-default" {{action 'cancelRant' rant}}>
               <i class="fa fa-share-square-o"></i> Cancel
             </button>
-            <button class="button button-warning" {{action 'deleteRant' this}}>
+            <button class="button button-warning" {{action 'deleteRant' rant}}>
               <i class="fa fa-trash-o"></i> Delete
             </button>
           </div>
@@ -28,7 +28,7 @@
       </aside>
       <section class="rant-content">
         <p>
-          {{textarea value=body }}
+          {{textarea value=rant.body }}
         </p>
       </section>
     </div>

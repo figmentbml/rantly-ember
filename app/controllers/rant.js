@@ -7,16 +7,16 @@ export default Ember.ObjectController.extend({
   needs: ['application'],
 
   rantMatch: function() {
-    var rantUser = this.model._data.user.id;
+    var rantUser = this.model._data.user;
     var appController = this.get('controllers.application');
-    var appUser = appController.currentUser ? appController.currentUser.id:  null;
+    var appUser = appController.currentUser ? appController.currentUser:  null;
     var controller = this;
     if ((appUser>0) && (rantUser>0)) {
       if (rantUser == appUser) {
         return true;
       }
     }
-  }.property('rantMatch'),
+  }.property().volatile(),
 
   actions: {
 
@@ -52,7 +52,7 @@ export default Ember.ObjectController.extend({
         rant.set('body', body);
         rant.save().then(function(){
           controller.set('isEditing', false);
-          controller.transitionToRoute('rants');
+          controller.transitionToRoute('rants.index');
         });
       }
     },

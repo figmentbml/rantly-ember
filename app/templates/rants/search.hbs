@@ -8,13 +8,13 @@
               {{input class="rant-header-focus" autofocus="true" value=rant.title}}
             </h3>
             <div class="rant-action">
-              <button class="button" {{action 'saveRant' this}}>
+              <button class="button" {{action 'saveRant' rant}}>
                 <i class="fa fa-save"></i> Save
               </button>
-              <button class="button button-default" {{action 'cancelRant' this}}>
+              <button class="button button-default" {{action 'cancelRant' rant}}>
                 <i class="fa fa-share-square-o"></i> Cancel
               </button>
-              <button class="button button-warning" {{action 'deleteRant' this}}>
+              <button class="button button-warning" {{action 'deleteRant' rant}}>
                 <i class="fa fa-trash-o"></i> Delete
               </button>
             </div>
@@ -32,7 +32,7 @@
         <div class="rant-box">
           <header class="rant-header">
             <h3 class="rant-title">
-              {{#link-to 'rant' rant}}
+              {{#link-to 'rant' rant.id}}
                 {{rant.title}}
               {{/link-to}}
             </h3>
@@ -45,7 +45,7 @@
             {{/if}}
           </header>
           <aside>
-            <div>{{gravatar-image email= user.email class='user-photo'}}</div>
+            <div>{{gravatar-image email= rant.user.email class='user-photo'}}</div>
           </aside>
           <section class="rant-content">
             <p>{{rant.body}}</p>
