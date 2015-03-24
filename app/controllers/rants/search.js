@@ -22,7 +22,6 @@ export default Ember.ArrayController.extend({
       this.transitionToRoute('rants.index');
     },
     saveRant: function(rant){
-      var controller = this;
       var title = this.get('title');
       var body = this.get('body');
 
@@ -50,7 +49,7 @@ export default Ember.ArrayController.extend({
     },
 
     deleteRant: function(rant) {
-      var control = this
+      var control = this;
       Ember.$('.button-warning').parents('header').addClass('fade-out');
       Ember.run.later(function(){
         rant.destroyRecord();

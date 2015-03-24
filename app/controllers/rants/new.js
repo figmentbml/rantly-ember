@@ -10,7 +10,6 @@ export default Ember.ArrayController.extend({
       var title = this.get('titleCopy');
       var body = this.get('bodyCopy');
       var app = this.get('controllers.application');
-      var user = app.currentUser;
 
       var input = document.getElementsByClassName("errors")[0];
 

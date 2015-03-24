@@ -10,7 +10,6 @@ export default Ember.ObjectController.extend({
     var rantUser = this.model._data.user;
     var appController = this.get('controllers.application');
     var appUser = appController.currentUser ? appController.currentUser:  null;
-    var controller = this;
     if ((appUser>0) && (rantUser>0)) {
       if (rantUser == appUser) {
         return true;
@@ -58,7 +57,7 @@ export default Ember.ObjectController.extend({
     },
 
     deleteRant: function(rant) {
-      var control = this
+      var control = this;
       Ember.$('.button-warning').parents('header').addClass('fade-out');
       Ember.run.later(function(){
         rant.destroyRecord();
