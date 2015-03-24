@@ -4,6 +4,11 @@ export default Ember.ArrayController.extend({
 
   needs: ['application'],
 
+  userEmail: function(){
+    var currentApp = this.get('controllers.application');
+    return currentApp.currentUserEmail;
+  }.property(),
+
   actions: {
     newRant: function(){
       var controller = this;

@@ -16,8 +16,7 @@
       </div>
     </header>
     <aside>
-      <div style="background-image: url(http://www.gravatar.com/avatar/)" class="user-photo">
-      </div>
+      <div>{{gravatar-image email=userEmail class='user-photo'}}</div>
       {{#if bodyCopy}}
         {{bodyCopy.length}}
       {{else}}
@@ -27,7 +26,7 @@
       <div class="errors">
 
       </div>
-      
+
     </aside>
     <section class="rant-content">
       {{textarea placeholder="Start your rant" autofocus="true" value=bodyCopy rows="13"}}
