@@ -2,15 +2,30 @@ import Ember from "ember";
 
 export default Ember.ArrayController.extend({
 
-  currentUser: null,
-  currentUserEmail: null,
-
   loggedIn: function() {
     var token = localStorage.authToken;
     if (token) {
       return true;
     } else {
       return false;
+    }
+  }.property().volatile(),
+
+  currentUserEmail: function() {
+    var email = localStorage.email;
+    if (email) {
+      return email;
+    } else {
+      return null;
+    }
+  }.property().volatile(),
+
+  currentUser: function() {
+    var user = localStorage.user;
+    if (user) {
+      return user;
+    } else {
+      return null;
     }
   }.property().volatile(),
 
@@ -50,6 +65,8 @@ export default Ember.ArrayController.extend({
         session.save().then(function(){
           if (session._data.success === true) {
             localStorage.setItem('authToken', session._data.token);
+            localStorage.setItem('email', email);
+            localStorage.setItem('user', session._data.user);
             controller.set('currentUser', session._data.user);
             controller.set('loggedIn', true);
             controller.set('currentUserEmail', email);

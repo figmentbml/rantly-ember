@@ -20,7 +20,7 @@
     </header>
     {{#if loggedIn}}
     <div class="log-in">
-      <div>{{gravatar-image email= currentUser.email class='user-photo'}}</div>
+      <div>{{gravatar-image email= currentUserEmail class='user-photo'}}</div>
       <button class="button register-button " {{action 'signOut'}}>
         Log out
       </button>

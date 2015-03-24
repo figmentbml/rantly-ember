@@ -19,8 +19,8 @@
           </div>
       </header>
       <aside>
-        <div>{{gravatar-image email= user.email class='user-photo'}}</div>
-        {{body.length}}
+        <div>{{gravatar-image email= rant.user.email class='user-photo'}}</div>
+        {{rant.body.length}}
         Characters
         <div class="errors">
 
@@ -51,7 +51,7 @@
         {{/if}}
       </header>
       <aside>
-        <div>{{gravatar-image email= user.email class='user-photo'}}</div>
+        <div>{{gravatar-image email= rant.user.email class='user-photo'}}</div>
       </aside>
       <section class="rant-content">
         <p>{{rant.body}}</p>
