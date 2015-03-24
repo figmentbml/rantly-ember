@@ -2,8 +2,17 @@ import Ember from "ember";
 
 export default Ember.ArrayController.extend({
 
-  loggedIn: false,
   currentUser: null,
+  currentUserEmail: null,
+
+  loggedIn: function() {
+    var token = localStorage.authToken;
+    if (token) {
+      return true;
+    } else {
+      return false;
+    }
+  }.property().volatile(),
 
   actions: {
 
@@ -37,15 +46,17 @@ export default Ember.ArrayController.extend({
         var error = document.createTextNode("All fields are required!");
         input.appendChild(error);
       } else {
-        var session = controller.store.createRecord('session', { email: email, password: password});
+        var session = controller.store.createRecord('session', { email: email, password: password });
         session.save().then(function(){
           if (session._data.success === true) {
             localStorage.setItem('authToken', session._data.token);
             controller.set('currentUser', session._data.user);
             controller.set('loggedIn', true);
+            controller.set('currentUserEmail', email);
             controller.set('emailHere', '');
             controller.set('passwordHere', '');
-            controller.transitionToRoute('rants');
+            controller.get('target').send('refresh');
+            controller.transitionToRoute('rants.index');
           } else {
             var error = document.createTextNode("Invalid email / password!");
             input.appendChild(error);
@@ -58,7 +69,8 @@ export default Ember.ArrayController.extend({
       localStorage.clear();
       this.set('loggedIn', false);
       this.set('currentUser', null);
-      this.transitionToRoute('rants');
+      this.transitionToRoute('rants.index');
+      location.reload();
     },
 
     }
