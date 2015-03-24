@@ -37,12 +37,12 @@
 
     <div class="rant-box">
       <header class="rant-header">
-        {{#link-to 'rant' this}}
+        {{#link-to 'rant' rant.id}}
           <h3 class="rant-title">
-            {{title}}
+            {{rant.title}}
           </h3>
         {{/link-to}}
-        {{#if rantMatch}}
+        {{#if rant.rantMatch}}
           <div class="rant-action">
             <button class="button" {{action 'editRant' rant}}>
               <i class="fa fa-pencil-square-o"></i> Edit
@@ -54,7 +54,7 @@
         <div>{{gravatar-image email= user.email class='user-photo'}}</div>
       </aside>
       <section class="rant-content">
-        <p>{{body}}</p>
+        <p>{{rant.body}}</p>
       </section>
     </div>
     {{/if}}
