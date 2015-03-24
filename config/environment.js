@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'rantly-ember',
     environment: environment,
     baseURL: '/',
-    // adapterURL: process.env.ADAPTER_URL,
+    adapterURL: process.env.ADAPTER_URL,
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
