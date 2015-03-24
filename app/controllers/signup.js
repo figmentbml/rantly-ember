@@ -23,7 +23,7 @@ export default Ember.ArrayController.extend({
           (password !== passwordConfirm)
         ) {
         var input = document.getElementsByClassName("errors")[0];
-        var error = document.createTextNode("All fields are required!");
+        var error = document.createTextNode("All fields are required! Password & Password Confirmation must be the same! \n");
         input.appendChild(error);
       } else {
         var user = controller.store.createRecord('user',
