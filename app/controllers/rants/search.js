@@ -50,10 +50,12 @@ export default Ember.ArrayController.extend({
     },
 
     deleteRant: function(rant) {
-      rant.deleteRecord();
-      rant.save().then(function(){
-        this.transitionToRoute('rants');
-      }.bind(this));
+      var control = this
+      Ember.$('.button-warning').parents('header').addClass('fade-out');
+      Ember.run.later(function(){
+        rant.destroyRecord();
+        control.transitionToRoute('rants.index');
+      }, 400);
     }
   }
 
