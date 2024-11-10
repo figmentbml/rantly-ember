@@ -1,7 +1,8 @@
 # Rantly-ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+First Ember app containing more information about me, information about my projects, and my resume. It was also my first web app using Handlebars.js.
+
+Technical Notes: Ember.js, Handlebars.js, all custom CSS & HTML
 
 ## Prerequisites
 
