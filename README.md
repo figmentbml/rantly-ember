@@ -1,8 +1,8 @@
 # Rantly-ember
 
-First Ember app containing more information about me, information about my projects, and my resume. It was also my first web app using Handlebars.js.
+Rantly is an app with Ember on the front end and Rails on the backend. It requires users to make rants that are at least 144 characters long and has client/server user auth.
 
-Technical Notes: Ember.js, Handlebars.js, all custom CSS & HTML
+Technical Notes: Ember.js, Rails API, Ember Associations, Gravatar API, Search Bar, Client/Server User Auth by Hand, Custom Validation Messages on Ember, Inline Editing
 
 ## Prerequisites
 
